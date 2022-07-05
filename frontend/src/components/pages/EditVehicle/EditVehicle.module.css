@@ -1,0 +1,66 @@
+.editar_veiculos_title_container{
+  margin-top: 100px;
+  padding: 10px;
+    overflow-x:auto;
+    text-align: center;
+}
+
+.cadastro_veiculos_container h2{
+  color: #34414c;
+}
+
+.form_container_edit{
+  padding: 0.5em;
+  margin: 1em auto;
+  max-width: 420px;
+  /*border: 1px solid #000;*/
+}
+
+.form_container_edit input{
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 8px;
+  border: 2px solid #cacaca;
+  border-radius: 4px;
+  outline: none;
+}
+
+::placeholder {
+  color:gray;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.form_container_edit button{
+  background-color: #29bc64;
+  color: #fff;
+  border: transparent;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: -apple-system, sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+.container_btn_edit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_btn_edit a{
+  text-decoration: none;
+  margin-right:5px;
+  color: #fff;
+  background-color: #ee9a04;
+  padding: 0.9em;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: -apple-system, sans-serif;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}

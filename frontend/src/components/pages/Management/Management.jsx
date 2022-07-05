@@ -15,7 +15,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import EditUser from '../EditUser/EditUser';
 import { CgPlayListAdd } from 'react-icons/cg';
 
-
 //Estilização do Modal
 const customStyles = {
     content: {
@@ -59,7 +58,6 @@ function Management() {
         setIsOpen(false);
     }
 
-
     useEffect(() => {
         api.get('/usuarios')
             .then((response) => {
@@ -70,7 +68,6 @@ function Management() {
                 console.error(error);
             })
     }, [])
-
 
     const handleReq = (id) => {
         api.get(`/usuarios/${id}/veiculos`)
@@ -104,6 +101,10 @@ function Management() {
 
     function navigateToRegisterVehiclePage(id) {
         navigate(`/cadastrar-veiculo/${id}`);
+    }
+
+    function navigateToEditVehiclePage(id){
+        navigate(`/editar-veiculo/${id}`)
     }
 
     async function deleteVehicle(id){
@@ -146,11 +147,11 @@ function Management() {
                                         <p>Modelo: {veiculo.modelo}</p>
                                         <p>Ano: {veiculo.ano}</p>
                                         <p>Placa: {veiculo.placaVeiculo}</p>
-                                        <button id={styles.btn_edit_vehicle}>
+                                        <button title="Editar veículo" onClick={(e) => { navigateToEditVehiclePage(veiculo._id) }} id={styles.btn_edit_vehicle}>
                                             <MdEdit/>
                                         </button>
                                         &nbsp;
-                                        <button onClick={(e) => { deleteVehicle(veiculo._id) }} className={styles.btn_delete}>
+                                        <button title="Deletar veículo" onClick={(e) => { deleteVehicle(veiculo._id) }} className={styles.btn_delete}>
                                             <MdDelete/>
                                         </button>
                                     </div>
@@ -166,7 +167,7 @@ function Management() {
                         <div className={styles.loading_spinner}>
                             <p>Carregando...</p>
                             &nbsp;
-                            <img src={LoadingSpinner} alt="locading spinner" />
+                            <img src={LoadingSpinner} alt="loading spinner" />
                         </div>
                     }
                     {!loading &&
@@ -185,20 +186,20 @@ function Management() {
                                         <td>{user.nome}</td>
                                         <td>{user.cpf}</td>
                                         <td>
-                                            <button onClick={(e) => { openModal(user._id) }} id={styles.btn_show_vehicle}>
+                                            <button title="Mostrar veículos" onClick={(e) => { openModal(user._id) }} id={styles.btn_show_vehicle}>
                                                 &nbsp;<BsEyeFill style={{ fontSize: "24px" }} />
                                             </button>
                                             &nbsp;
-                                            <button onClick={(e) => { navigateToRegisterVehiclePage(user._id) }} id={styles.btn_add_vehicle}>
+                                            <button title="Adicionar veículo" onClick={(e) => { navigateToRegisterVehiclePage(user._id) }} id={styles.btn_add_vehicle}>
                                                 &nbsp;<CgPlayListAdd style={{ fontSize: "25px" }} />
                                             </button>
                                         </td>
                                         <td>
-                                            <button onClick={(e) => { handleDeleteUser(user._id) }} className={styles.btn_delete}>
+                                            <button title="Deletar usuário" onClick={(e) => { handleDeleteUser(user._id) }} className={styles.btn_delete}>
                                                 <MdDelete />
                                             </button>
                                             &nbsp;
-                                            <button onClick={(e) => { navigateToEditPage(user._id) }} id={styles.btn_edit_user}>
+                                            <button title="Editar usuário" onClick={(e) => { navigateToEditPage(user._id) }} id={styles.btn_edit_user}>
                                                 <FaUserEdit style={{ color: "green", fontSize: "25px" }} />
                                             </button>
                                         </td>

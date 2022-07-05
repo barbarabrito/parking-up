@@ -79,5 +79,4 @@ function RegisterVehicle() {
         </div>
     )
 }
-
 export default RegisterVehicle;

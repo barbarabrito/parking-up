@@ -16,5 +16,4 @@ function Vehicles(){
         </div>
     )
 }
-
 export default Vehicles;

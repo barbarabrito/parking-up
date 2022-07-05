@@ -10,7 +10,7 @@ import Management from '../src/components/pages/Management/Management';
 import RegisterVehicle from '../src/components/pages/RegisterVehicle/RegisterVehicle';
 import Vehicles from '../src/components/pages/Vehicles/Vehicles';
 import EditUser from '../src/components/pages/EditUser/EditUser';
-
+import EditVehicle from '../src/components/pages/EditVehicle/EditVehicle';
 
 function App() {
 
@@ -24,6 +24,7 @@ function App() {
           <Route path='/editar-usuario/:id' element={<EditUser/>}/>
           <Route path='/cadastrar-veiculo/:id' element={<RegisterVehicle/>}/>
           <Route path='/veiculos' element={<Vehicles/>}/>
+          <Route path='/editar-veiculo/:id' element={<EditVehicle/>}/>
           <Route path='/gerenciar' element={<Management/>}/>
           <Route path='/sobre' element={<Sobre/>}/>
        </Routes>
@@ -32,4 +33,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

@@ -38,7 +38,7 @@ function Users(){
                             <div className={styles.loading_spinner}>
                                 <p>Carregando...</p>
                                 &nbsp;
-                                <img src={LoadingSpinner} alt="locading spinner"/>
+                                <img src={LoadingSpinner} alt="loading spinner"/>
                             </div>
                         }
                         { !loading &&
@@ -71,5 +71,4 @@ function Users(){
         </> 
     )
 }
-
 export default Users;

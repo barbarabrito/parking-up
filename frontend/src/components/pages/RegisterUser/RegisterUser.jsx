@@ -76,5 +76,4 @@ function RegisterUser() {
         </div>
     )
 }
-
 export default RegisterUser;

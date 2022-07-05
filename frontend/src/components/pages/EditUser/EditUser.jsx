@@ -101,5 +101,4 @@ function EditUser() {
         </div>
     )
 }
-
 export default EditUser;
