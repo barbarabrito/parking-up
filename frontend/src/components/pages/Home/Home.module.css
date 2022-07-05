@@ -5,6 +5,10 @@
 	/*border: 1px solid #000;*/
 }
 
+.container_welcome h1{
+	font-size: 40px;
+}
+
 #hello_admin{
 	display: flex;
 	align-items: center;

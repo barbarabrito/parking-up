@@ -12,7 +12,7 @@ function Home(){
 				<main className="main">
 				<div className={styles.container_welcome}>
 					<div id={styles.hello_admin}>
-						<MdManageAccounts style={{fontSize:"32px", color:"#e69500"}}/> <h1>Bem-vindo, admin</h1>
+						<MdManageAccounts style={{fontSize:"40px", color:"#e69500"}}/> <h1>Bem-vindo, admin</h1>
 					</div>
 				</div>
 				</main>

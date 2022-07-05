@@ -21,15 +21,15 @@
 	"paths":{
 		"/usuarios":{
 			"get":{
-				"summary":"Listagem de usuários",
+				"summary":"Lista todos os usuários",
 				"description":"Rota para listagem de todos os usuários cadastrados",
 				"tags":["Usuario"]
 			}
 		},
-		"/usuarios/{id}/veiculos":{
+		"/usuarios/{id}  ":{
 			"get":{
-				"summary":"Listagem dos veículos de um usuário",
-				"description":"Rota que lista todos os veículos de um usuário específico",
+				"summary":"Lista um usuário pelo id",
+				"description":"Rota para listagem de um usuário pelo id",
 				"tags":["Usuario"]
 			}
 		},
@@ -47,6 +47,29 @@
 						}
 					}
 				}
+			}
+		},
+		"usuarios/{id}/veiculos":{
+			"post":{
+				"summary":"Cadastra um veículo de um usuário",
+				"description":"Rota para cadastro de veículos de um determinado usuário",
+				"tags":["Usuario"],
+				"requestBody":{
+					"content":{
+						"application/json":{
+							"schema":{
+								"$ref":"#/components/schemas/Veiculo"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/usuarios/{id}/veiculos":{
+			"get":{
+				"summary":"Listagem dos veículos de um usuário",
+				"description":"Rota que lista todos os veículos de um usuário específico",
+				"tags":["Usuario"]
 			}
 		},
 		"/usuarios/{id} ":{
@@ -100,6 +123,13 @@
 						}
 					}
 				}
+			}
+		},
+		"/veiculos/{id}  ":{
+			"delete":{
+				"summary":"Remove um veículo",
+				"description":"Rota para deletar um veículo pelo id",
+				"tags":["Veiculo"]
 			}
 		}
 	},
