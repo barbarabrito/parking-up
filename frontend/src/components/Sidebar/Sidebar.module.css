@@ -1,0 +1,31 @@
+.sidebar{
+	/*background-color:#6a8aff;*/
+	/*background-color:#3e5366;*/
+	/*background-color: #34414c;*/
+	background-color: #32374a;
+	padding: 10px;
+	width: 230px;
+  	/*#495e73;*/
+}
+
+.sidebar li{
+
+	margin: 8px 0;
+	padding: 0.5em;
+	list-style: none;
+	/*border: 1px solid #000;*/
+	/*margin-left: -35px;*/
+}
+
+.sidebar a{
+	text-decoration: none;
+	list-style: none;
+	color: #fff;
+}
+
+#car_icon{
+	height:50px;
+	width: 50px;
+	margin-left:55px;
+	margin-top: 35px; 
+}

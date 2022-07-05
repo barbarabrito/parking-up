@@ -1,0 +1,48 @@
+.lista_usuarios{
+	margin-left: 30px;
+	padding: 10px;
+  overflow-x:auto;
+}
+
+.lista_usuarios h2{
+	color: #34414c;
+}
+
+.loading_spinner{
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  /*text-align: ;*/
+}
+
+.loading_spinner img{
+  width: 16px;
+  height: 16px;
+}
+
+#table_usuarios {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table_usuarios td, #table_usuarios th {
+  /*border: 1px solid #ddd;*/
+  padding: 8px;
+  color: #333333;
+  padding:0.7em;
+}
+
+#table_usuarios tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+#table_usuarios tr:hover {background-color: #ddd;}
+
+#table_usuarios th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#fde19b;
+  color: #34414c;
+}

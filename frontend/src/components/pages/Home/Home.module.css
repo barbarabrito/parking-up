@@ -1,0 +1,19 @@
+.container_welcome{
+	margin: 3em;
+	/*text-align: center;*/
+	text-align: left;
+	/*border: 1px solid #000;*/
+}
+
+#hello_admin{
+	display: flex;
+	align-items: center;
+}
+
+/*.wrapper_container{
+	width:  100%;
+	height: 100%;
+	display: flex;
+	position: relative;
+}
+*/

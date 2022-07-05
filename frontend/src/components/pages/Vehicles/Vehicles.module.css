@@ -1,0 +1,9 @@
+.lista_veiculos_title_container{
+	margin-left: 30px;
+	padding: 10px;
+  	overflow-x:auto;
+}
+
+.lista_veiculos_title_container h2{
+	color: #34414c;
+}

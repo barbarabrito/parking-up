@@ -1,0 +1,144 @@
+{
+	"openapi":"3.0.0",
+	"info":{
+		"title":"Parking Up API",
+		"description":"Essa API foi desenvolvida para o primeiro desafio do StationOne e tem como propósito oferecer ferramentas de gestão para um sistema de estacionamento de veículos.",
+		"contact":{
+			"email":"barbaramabrito@gmail.com"
+		},
+		"version":"1.0.0"
+	},
+	"servers":[
+		{
+			"url":"http://localhost:5000",
+			"description":"API de desenvolvimento/teste"
+		},
+		{
+			"url":"https://parkingupapi.onrender.com",
+			"description":"API de produção"
+		}
+	],
+	"paths":{
+		"/usuarios":{
+			"get":{
+				"summary":"Listagem de usuários",
+				"description":"Rota para listagem de todos os usuários cadastrados",
+				"tags":["Usuario"]
+			}
+		},
+		"/usuarios/{id}/veiculos":{
+			"get":{
+				"summary":"Listagem dos veículos de um usuário",
+				"description":"Rota que lista todos os veículos de um usuário específico",
+				"tags":["Usuario"]
+			}
+		},
+		"/usuarios/register":{
+			"post":{
+				"summary":"Cadastro de usuários",
+				"description":"Rota para cadastro de usuários",
+				"tags":["Usuario"],
+				"requestBody":{
+					"content":{
+						"application/json":{
+							"schema":{
+								"$ref":"#/components/schemas/Usuario"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/usuarios/{id} ":{
+			"put":{
+				"summary":"Atualiza um usuário",
+				"description":"Rota para atualização do usuario",
+				"tags":["Usuario"],
+				"requestBody":{
+					"content":{
+						"application/json":{
+							"schema":{
+								"$ref":"#/components/schemas/Usuario"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/usuarios/{id}":{
+			"delete":{
+				"summary":"Remove um usuário",
+				"description":"Rota para deletar usuários",
+				"tags":["Usuario"]
+			}
+		},
+		"/veiculos":{
+			"get":{
+				"summary":"Lista todos os veículos",
+				"description":"Rota para a listagem de todos os veículos existentes",
+				"tags":["Veiculo"]
+			}
+		},
+		"/veiculos/{id}":{
+			"get":{
+				"summary":"Lista um veículo por id",
+				"description":"Rota para listar um veículo por id",
+				"tags":["Veiculo"]
+			}
+		},
+		"/veiculos/{id} ":{
+			"put":{
+				"summary":"Atualiza um veículo",
+				"description":"Rota para atualizar um veículo",
+				"tags":["Veiculo"],
+				"requestBody":{
+					"content":{
+						"application/json":{
+							"schema":{
+								"$ref":"#/components/schemas/Veiculo"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components":{
+		"schemas":{
+			"Usuario":{
+				"type":"object",
+				"properties":{
+					"nome":{
+						"type":"string"
+					},
+					"email":{
+						"type":"string"	
+					},
+					"cpf":{
+						"type":"string"
+					},
+					"dataNascimento":{
+						"type":"string"
+					}
+				}
+			},
+			"Veiculo":{
+				"type":"object",
+				"properties":{
+					"marca":{
+						"type":"string"
+					},
+					"modelo":{
+						"type":"string"
+					},
+					"ano":{
+						"type":"string"
+					},
+					"plcaVeiculo":{
+						"type":"string"
+					}
+				}
+			}
+		}
+	}
+}

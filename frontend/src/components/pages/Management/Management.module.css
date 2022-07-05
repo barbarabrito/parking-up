@@ -1,0 +1,107 @@
+.gerenciar_cadastros_container{
+	margin-left: 30px;
+	padding: 10px;
+  overflow-x:auto;
+}
+
+.gerenciar_cadastros_container h2{
+	color: #34414c;
+}
+
+.table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table td, .table th {
+  /*border: 1px solid #ddd;*/
+  padding: 8px;
+  color: #333333;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#fde19b;
+  color: #34414c;
+}
+
+#btn_show_vehicle{
+  background-color: transparent;
+  color: #00004d;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.loading_spinner{
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  /*text-align: ;*/
+}
+
+.loading_spinner img{
+  width: 16px;
+  height: 16px;
+}
+
+#btn_delete_user{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 22px ;
+}
+
+/*Estilização do modal*/
+
+#btn_close_model{
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  color: #595959;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  cursor: pointer;
+}
+
+.no_vehicle{
+  text-align: center;
+}
+
+.container_show_vehicles{
+  text-align: center;
+  padding: 0.5em;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin: 0 auto 10px auto;
+  width: 60%;
+}
+
+.container_show_vehicles p{
+  padding: 0.5em;
+  color: #34414c;
+  font-weight: 500;
+}
+
+#btn_edit_user{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#btn_add_vehicle{
+  background-color: transparent;
+  color: #cc8500;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
