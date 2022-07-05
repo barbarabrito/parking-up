@@ -30,7 +30,6 @@ function EditUser() {
     }, [])
 
     function updateUser(e, id) {
-
         e.preventDefault();
 
         api.put(`/usuarios/${id}`, {
@@ -39,13 +38,13 @@ function EditUser() {
             cpf,
             dataNascimento
         })
-            .then(response => {
-                console.log(response.data);
-                navigate('/gerenciar');
-            })
-            .catch(error => {
-                console.log('Algo deu errado', error)
-            })
+        .then(response => {
+            console.log(response.data);
+            navigate('/gerenciar');
+        })
+        .catch(error => {
+            console.log('Algo deu errado', error)
+        })
     }
 
     return (
