@@ -163,6 +163,7 @@ module.exports = class UsuarioController {
 
       try {
         await Veiculo.find({ dono: id }).deleteMany().exec();
+        console.log('removido');
       } catch (error) {
         res.status(400).json({ message: error });
       }

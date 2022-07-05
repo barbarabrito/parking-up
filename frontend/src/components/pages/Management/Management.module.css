@@ -50,12 +50,12 @@
   height: 16px;
 }
 
-#btn_delete_user{
+.btn_delete{
   background-color: transparent;
   border: none;
   cursor: pointer;
   color: red;
-  font-size: 22px ;
+  font-size: 24px ;
 }
 
 /*Estilização do modal*/
@@ -77,7 +77,7 @@
 
 .container_show_vehicles{
   text-align: center;
-  padding: 0.5em;
+  padding: 2em;
   background-color: #f2f2f2;
   border-radius: 5px;
   margin: 0 auto 10px auto;
@@ -102,4 +102,20 @@
   border: none;
   cursor: pointer;
   font-size: 15px;
+}
+
+#btn_edit_vehicle{
+  background-color: transparent;
+  color: green;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.container_show_vehicles button{
+  margin-top: 10px;
+  /*position: absolute;
+  right: 14%;
+  top: 50%;
+  font-size: 28px;*/
 }

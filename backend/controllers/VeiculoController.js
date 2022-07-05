@@ -70,23 +70,18 @@ module.exports = class VeiculoController {
 
     const veiculo = await Veiculo.findById(id);
     const dono = veiculo.dono; 
-
     const usuario = await Usuario.findById(dono);
 
     try {
-
       usuario.veiculos.pull({ _id: id });
-      await usuario.save();
       console.log('removido');
-      res.status(200).json('Veículo removido');
-      
     }catch(error) {
       res.status(400).json({message: error});
     }
 
     try {
       await Veiculo.findByIdAndRemove(id);
-      res.status(200).json({ message: 'Veículo removido com sucesso!' })
+      res.status(200).json({ message: 'Veículo removido' })
     }catch (error) {
       res.status(400).json({ message: error });
     }
