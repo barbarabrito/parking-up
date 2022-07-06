@@ -7,3 +7,80 @@
 .lista_veiculos_title_container h2{
 	color: #34414c;
 }
+
+.loading_spinner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading_spinner img{
+  width: 16px;
+  height: 16px;
+}
+
+#table_veiculos {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table_veiculos td, #table_veiculos th {
+  /*border: 1px solid #ddd;*/
+  padding: 8px;
+  color: #333333;
+  padding:0.7em;
+}
+
+#table_veiculos tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+#table_veiculos tr:hover {background-color: #ddd;}
+
+#table_veiculos th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#fde19b;
+  color: #34414c;
+}
+
+#btn_close_modal{
+	background-color: transparent;
+	border: none;
+	font-size: 25px;
+	color: #595959;
+	position: absolute;
+	right: 5%;
+	top: 5%;
+	cursor: pointer;
+  }
+  
+  .no_vehicle{
+	text-align: center;
+  }
+  
+  .container_show_vehicles{
+	text-align: center;
+	padding: 2em;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	margin: 0 auto 10px auto;
+	width: 60%;
+  }
+  
+  .container_show_vehicles p{
+	padding: 0.5em;
+	color: #34414c;
+	font-weight: 500;
+  }
+  
+  #btn_show_vehicle{
+	background-color: transparent;
+	color: #00004d;
+	border: none;
+	cursor: pointer;
+	font-size: 15px;
+  }
+  

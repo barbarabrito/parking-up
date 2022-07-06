@@ -109,6 +109,13 @@
 				"tags":["Veiculo"]
 			}
 		},
+		"/veiculos/{id}/usuario":{
+			"get":{
+				"summary":"Retorna o dono de um veículo",
+				"description":"Rota que retorna o dono de um determinado veículo",
+				"tags":["Veiculo"]
+			}
+		},
 		"/veiculos/{id} ":{
 			"put":{
 				"summary":"Atualiza um veículo",

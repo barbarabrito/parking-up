@@ -2,8 +2,6 @@ import styles from './Users.module.css';
 import Sidebar from '../../Sidebar/Sidebar';
 import api from '../../../services/api';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import Navbar from '../../Navbar/Navbar';
 import {HiUsers} from 'react-icons/hi';
 import { format } from 'date-fns';
 import LoadingSpinner from '../../../assets/img/1488.gif';
@@ -63,8 +61,7 @@ function Users(){
                                         </tr>
                                     ))}
                                 </tbody>
-                            </table>
-                        }
+                            </table>}
                     </div>
                 </main>
             </div>

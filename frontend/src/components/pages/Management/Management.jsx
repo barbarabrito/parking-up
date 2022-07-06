@@ -6,13 +6,11 @@ import api from '../../../services/api';
 import LoadingSpinner from '../../../assets/img/1488.gif';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { FaUserEdit } from 'react-icons/fa';
-import { BsEyeFill } from 'react-icons/bs'
-import { Link } from 'react-router-dom';
+import { IoIosEye } from 'react-icons/io'
 import Modal from 'react-modal';
 import { RiCloseFill } from 'react-icons/ri'
 import { AiFillCar } from 'react-icons/ai';
-import { useNavigate, useParams } from 'react-router-dom';
-import EditUser from '../EditUser/EditUser';
+import { useNavigate } from 'react-router-dom';
 import { CgPlayListAdd } from 'react-icons/cg';
 
 //Estilização do Modal
@@ -36,8 +34,6 @@ function Management() {
     const [loading, setLoading] = useState(true);
     const [veiculos, setVeiculos] = useState([]);
     const navigate = useNavigate();
-    const [usd, setUsd] = useState([]);
-    const { id } = useParams();
 
     //Configurações do Modal
 
@@ -135,7 +131,7 @@ function Management() {
                             style={customStyles}
                             contentLabel="Example Modal"
                         >
-                            <button onClick={closeModal} id={styles.btn_close_model}><RiCloseFill /></button>
+                            <button onClick={closeModal} id={styles.btn_close_modal}><RiCloseFill /></button>
                             <br />
                             <h2 ref={(_subtitle) => (subtitle = _subtitle)}><AiFillCar style={{ fontSize: "19px" }} /> Veículos</h2>                  
                             <br />
@@ -187,7 +183,7 @@ function Management() {
                                         <td>{user.cpf}</td>
                                         <td>
                                             <button title="Mostrar veículos" onClick={(e) => { openModal(user._id) }} id={styles.btn_show_vehicle}>
-                                                &nbsp;<BsEyeFill style={{ fontSize: "24px" }} />
+                                                &nbsp;<IoIosEye style={{ fontSize: "26px" }} />
                                             </button>
                                             &nbsp;
                                             <button title="Adicionar veículo" onClick={(e) => { navigateToRegisterVehiclePage(user._id) }} id={styles.btn_add_vehicle}>

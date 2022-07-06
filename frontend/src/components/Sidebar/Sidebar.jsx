@@ -1,7 +1,6 @@
 import styles from './Sidebar.module.css';
 import {AiOutlineUser, AiOutlineCar} from 'react-icons/ai';
 import {BiUserPlus} from 'react-icons/bi';
-import {MdChecklistRtl} from 'react-icons/md';
 import {RiListSettingsLine} from 'react-icons/ri'
 import {Link} from 'react-router-dom';
 import {FiInfo} from 'react-icons/fi';

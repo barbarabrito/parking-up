@@ -21,7 +21,7 @@ module.exports = class VeiculoController {
 
     try{
       const newVeiculo = await veiculo.save();
-      res.status(201).json({message: 'Veículo salvo com sucesso'});
+      res.status(201).json({message: 'Veículo cadastrado'});
     }catch(error) {
       res.status(400).json({message: error});
     }
@@ -84,6 +84,23 @@ module.exports = class VeiculoController {
       res.status(200).json({ message: 'Veículo removido' })
     }catch (error) {
       res.status(400).json({ message: error });
+    }
+  }
+
+  //veiculo controller
+  static async getVehiclesUser(req, res) {
+    const { id } = req.params;
+
+    const veiculo = await Veiculo.findById(id);
+    const dono = veiculo.dono;
+
+    try {
+      const usuario = await Usuario.findById(dono);
+      res.status(200).json({
+        usuario: usuario,
+      })
+    }catch(error){
+      res.status(400).json({message: error});
     }
   }
 }

@@ -15,7 +15,6 @@
 }
 
 .table td, .table th {
-  /*border: 1px solid #ddd;*/
   padding: 8px;
   color: #333333;
 }
@@ -43,6 +42,7 @@
 .loading_spinner{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .loading_spinner img{
@@ -60,7 +60,7 @@
 
 /*Estilização do modal*/
 
-#btn_close_model{
+#btn_close_modal{
   background-color: transparent;
   border: none;
   font-size: 25px;
@@ -113,9 +113,5 @@
 }
 
 .container_show_vehicles button{
-  margin-top: 10px;
-  /*position: absolute;
-  right: 14%;
-  top: 50%;
-  font-size: 28px;*/
+  margin-top: 20px;
 }

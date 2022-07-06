@@ -74,7 +74,7 @@ function RegisterUser() {
                         <input type="text"
                             id="dataNascimento"
                             name="dataNascimento"
-                            placeholder="Data de Nascimento (Formato dd/MM/YYYY)"
+                            placeholder="Data de Nascimento (Formato dd/mm/yyyy)"
                             value={dataNascimento}
                             onChange={(e) => setDataNascimento(e.target.value)}
                         />

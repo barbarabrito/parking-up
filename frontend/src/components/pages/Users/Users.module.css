@@ -11,8 +11,7 @@
 .loading_spinner{
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
-  /*text-align: ;*/
+  justify-content: center;
 }
 
 .loading_spinner img{

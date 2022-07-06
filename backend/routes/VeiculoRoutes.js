@@ -16,4 +16,7 @@ router.put('/:id', VeiculoController.updateVeiculo);
 //remove um veículo (/veiculos/:id)
 router.delete('/:id', VeiculoController.removeVehicle);
 
+//retorna o dono de um veículo (/veiculos/:id/usuario)
+router.get('/:id/usuario', VeiculoController.getVehiclesUser);
+
 module.exports = router;

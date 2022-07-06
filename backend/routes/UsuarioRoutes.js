@@ -16,10 +16,10 @@ router.get('/', UsuarioController.getAllUsers);
 //atualiza o usuário no banco (/usuarios/:id)
 router.put('/:id', UsuarioController.updateUser);
 
-//endpoint do cadastro de veículos (/usuarios/:id/veiculos)
+//cadastro de veículos (/usuarios/:id/veiculos)
 router.post('/:id/veiculos', UsuarioController.createUserVehicle);
 
-//endpoint que lista veículos para um usuário específico (/usuarios/:id/veiculos)
+//retorna os veículos de um usuário específico (/usuarios/:id/veiculos)
 router.get('/:id/veiculos', UsuarioController.getUserVehicles);
 
 //deleta um usuario (/usuarios/:id)

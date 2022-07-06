@@ -90,7 +90,7 @@ module.exports = class UsuarioController {
 
     try {
       const newUsuario = await usuario.save();
-      res.status(201).json({ message: 'Usuário criado com sucesso' });
+      res.status(201).json({ message: 'Usuário cadastrado' });
     }catch (error) {
       res.status(400).json({ message: error });
     }
