@@ -1,0 +1,21 @@
+.container_sobre{
+	margin: 50px auto;
+	min-height: 79vh;
+	padding: 10px;
+	/*border: 1px solid green;*/
+}
+
+.info{
+	max-width: 700px;
+	margin: 0 auto;
+	/*border: 1px solid green;*/
+
+}
+
+.container_sobre h2{
+	color: #1c2236;
+}
+
+.container_sobre a{
+	color: #e69500;
+}

@@ -24,13 +24,13 @@ function RegisterVehicle() {
             ano,
             placaVeiculo
         })
-            .then(response => {
-                console.log(response.data);
-                navigate('/gerenciar');
-            })
-            .catch(error => {
-                console.log('Algo deu errado', error)
-            })
+        .then(response => {
+            console.log(response.data);
+            navigate('/gerenciar');
+        })
+        .catch(error => {
+            console.log('Algo deu errado', error)
+        })
     }
 
     return (

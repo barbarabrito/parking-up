@@ -83,14 +83,6 @@ function EditUser() {
                             value={dataNascimento}
                             onChange={(e) => setDataNascimento(e.target.value)}
                         />
-                        <input type="text"
-                            id="veiculo"
-                            placeholder="Veículo"
-                            disabled
-                        // value={dataNascimento}
-                        // onChange={(e) => setVeiculo(e.target.value)}
-                        />
-
                         <span className={styles.container_btn_edit}>
                             <Link to='/gerenciar'>Cancelar</Link>
                             <button onClick={(e) => updateUser(e, id)}>Salvar usuário</button>

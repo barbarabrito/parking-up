@@ -11,8 +11,15 @@ module.exports = class UsuarioController {
     const dataNascimento = req.body.dataNascimento;
 
     //validações dos campos
-
     if (!nome) {
+      res.status(422).json({ message: 'O nome é obrigatório' })
+      return
+    }
+
+    //verifica se o nome está em branco
+    const nomeRegex = /^\s+$/
+
+    if ((nomeRegex.test(nome))){
       res.status(422).json({ message: 'O nome é obrigatório' })
       return
     }
@@ -163,7 +170,6 @@ module.exports = class UsuarioController {
 
       try {
         await Veiculo.find({ dono: id }).deleteMany().exec();
-        console.log('removido');
       } catch (error) {
         res.status(400).json({ message: error });
       }
@@ -171,7 +177,7 @@ module.exports = class UsuarioController {
 
     try {
       await Usuario.findByIdAndRemove(id);
-      res.status(200).json({ message: 'Usuário removido com sucesso!' })
+      res.status(200).json({ message: 'Usuário removido' })
     }catch (error) {
       res.status(400).json({ message: error });
     }

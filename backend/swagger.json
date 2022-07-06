@@ -164,7 +164,7 @@
 					"ano":{
 						"type":"string"
 					},
-					"plcaVeiculo":{
+					"placaVeiculo":{
 						"type":"string"
 					}
 				}
