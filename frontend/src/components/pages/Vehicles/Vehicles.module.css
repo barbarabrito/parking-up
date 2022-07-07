@@ -1,3 +1,4 @@
+
 .lista_veiculos_title_container{
 	margin-left: 30px;
 	padding: 10px;
@@ -57,30 +58,45 @@
 	cursor: pointer;
   }
   
-  .no_vehicle{
+.no_vehicle{
 	text-align: center;
-  }
+}
   
-  .container_show_vehicles{
+.container_show_vehicles{
 	text-align: center;
 	padding: 2em;
 	background-color: #f2f2f2;
 	border-radius: 5px;
 	margin: 0 auto 10px auto;
 	width: 60%;
-  }
+}
   
-  .container_show_vehicles p{
+.container_show_vehicles p{
 	padding: 0.5em;
 	color: #34414c;
 	font-weight: 500;
   }
   
-  #btn_show_vehicle{
+#btn_show_vehicle{
 	background-color: transparent;
 	color: #00004d;
 	border: none;
 	cursor: pointer;
 	font-size: 15px;
-  }
-  
+}
+
+.container_input{
+  text-align: right;
+}
+
+#search_bar_vehicles{
+  padding: 8px;
+  margin: 0 1px 10px 0;
+  outline: none;
+  font-family: Helvetica, sans-serif;
+}
+#search_bar_vehicles::placeholder{
+  color: gray;
+  font-weight: bold;
+}
+

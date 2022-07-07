@@ -29,6 +29,7 @@ function Vehicles(){
     const [users, setUsers] = useState([]);
     const [veiculos, setVeiculos] = useState([]);
     const [isLoading, setLoading] = useState(true);
+    const [search, setSearch] = useState('');
 
     let subtitle;
 
@@ -96,7 +97,6 @@ function Vehicles(){
                         <br/>
                         <h2>&nbsp;<FaCarSide style={{fontSize:"20px"}}/> Lista de veículos</h2>
                      </div>
-                     <br/>
                      {isLoading &&
                             <div className={styles.loading_spinner}>
                                 <p>Carregando...</p>
@@ -104,6 +104,9 @@ function Vehicles(){
                                 <img src={LoadingSpinner} alt="loading spinner"/>
                             </div>
                         }
+                        <div className={styles.container_input}>
+                            <input type="text" placeholder="&#x1F50D; &nbsp; Procurar por placa" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_vehicles}/>
+                        </div>
                         { !isLoading &&
                          <table id={styles.table_veiculos}>
                                 <thead>
@@ -117,7 +120,15 @@ function Vehicles(){
                                   </tr>
                                 </thead>
                                 <tbody>
-                                    {veiculos.map(veiculo => (
+                                    {veiculos.filter((veiculo)=> {
+                                        if(search == ""){
+                                            return veiculo
+                                        }else if (veiculo.placaVeiculo.toLowerCase().includes(search.toLocaleLowerCase())) {
+                                            return veiculo
+                                        }
+                                    })
+                                    .map((veiculo) => {
+                                        return(
                                         <tr key={veiculo._id}>
                                             <td>{veiculo.marca}</td>
                                             <td>{veiculo.modelo}</td>
@@ -125,12 +136,13 @@ function Vehicles(){
                                             <td>{veiculo.placaVeiculo}</td>
                                             <td>{format(new Date(veiculo.createdAt), 'dd/MM/yyyy')}</td>
                                             <td>
-                                               <button title="Mostrar veículos" onClick={(e) => { openModal(veiculo._id) }} id={styles.btn_show_vehicle}>
+                                               <button title="Mostrar dono" onClick={(e) => { openModal(veiculo._id) }} id={styles.btn_show_vehicle}>
                                                     &nbsp;<IoIosEye style={{ fontSize: "26px" }} />
                                                 </button>
                                             </td>
                                         </tr>
-                                    ))}
+                                        ); 
+                                    })}
                                 </tbody>
                         </table>}
                     </div>

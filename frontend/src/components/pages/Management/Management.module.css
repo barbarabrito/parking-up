@@ -115,3 +115,19 @@
 .container_show_vehicles button{
   margin-top: 20px;
 }
+.container_input{
+  text-align: right;
+}
+
+#search_bar_users{
+  padding: 8px;
+  margin: 0 1px 10px 0;
+  outline: none;
+  font-family: Helvetica, sans-serif;
+}
+
+#search_bar_users::placeholder{
+  color: gray;
+  font-weight: bold;
+}
+

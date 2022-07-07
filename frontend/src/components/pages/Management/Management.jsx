@@ -34,6 +34,7 @@ function Management() {
     const [loading, setLoading] = useState(true);
     const [veiculos, setVeiculos] = useState([]);
     const navigate = useNavigate();
+    const [search, setSearch] = useState('');
 
     //Configurações do Modal
 
@@ -166,6 +167,9 @@ function Management() {
                             <img src={LoadingSpinner} alt="loading spinner" />
                         </div>
                     }
+                    <div className={styles.container_input}>
+                        <input type="text" placeholder="&#x1F50D; Procurar por nome" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_users}/>
+                    </div>
                     {!loading &&
                         <table className={styles.table}>
                             <thead>
@@ -177,7 +181,15 @@ function Management() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {users.map(user => (
+                            {users.filter((user) => {
+                                        if(search == ""){
+                                            return user
+                                        }else if (user.nome.toLowerCase().includes(search.toLocaleLowerCase())) {
+                                            return user
+                                        }
+                                })
+                                .map((user) => {
+                                    return(
                                     <tr key={user._id}>
                                         <td>{user.nome}</td>
                                         <td>{user.cpf}</td>
@@ -199,8 +211,9 @@ function Management() {
                                                 <FaUserEdit style={{ color: "green", fontSize: "25px" }} />
                                             </button>
                                         </td>
-                                    </tr>
-                                ))}
+                                     </tr>
+                                    );
+                                })}
                             </tbody>
                         </table>
                     }

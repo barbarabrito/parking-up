@@ -10,6 +10,7 @@ function Users(){
 
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
         api.get('/usuarios')
@@ -39,6 +40,9 @@ function Users(){
                                 <img src={LoadingSpinner} alt="loading spinner"/>
                             </div>
                         }
+                       <div className={styles.container_input}>
+                            <input type="text" placeholder="&#x1F50D; Procurar por nome" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_users}/>
+                        </div>
                         { !loading &&
                             <table id={styles.table_usuarios}>
                                 <thead>
@@ -51,7 +55,15 @@ function Users(){
                                   </tr>
                                 </thead>
                                 <tbody>
-                                    {users.map(user => (
+                                    {users.filter((user)=> {
+                                        if(search == ""){
+                                            return user
+                                        }else if (user.nome.toLowerCase().includes(search.toLocaleLowerCase())) {
+                                            return user
+                                        }
+                                    })
+                                    .map((user) => {
+                                        return(
                                         <tr key={user._id}>
                                             <td>{user.nome}</td>
                                             <td>{user.email}</td>
@@ -59,7 +71,8 @@ function Users(){
                                             <td>{user.dataNascimento}</td>
                                             <td>{format(new Date(user.createdAt), 'dd/MM/yyyy')}</td>
                                         </tr>
-                                    ))}
+                                        );
+                                    })}
                                 </tbody>
                             </table>}
                     </div>
