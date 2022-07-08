@@ -42,10 +42,13 @@ Tecnologias utilizadas neste projeto:
 ![preview management](preview/gerenciamento.png)
 
 #### Lista de veículos
-![preview vehicles](demo/veiculos.png)
+![preview vehicles](preview/veiculos.png)
 
 #### Modal exibindo veículos
-![preview modal](demo/modal.png)
+![preview modal](preview/modal.png)
+
+#### Barra de pesquisa
+![preview searchbar](preview/search.gif)
 
 ### Instruções para rodar o app localmente
 #### Front-end
