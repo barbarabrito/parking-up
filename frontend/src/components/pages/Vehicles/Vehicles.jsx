@@ -97,6 +97,7 @@ function Vehicles(){
                         <br/>
                         <h2>&nbsp;<FaCarSide style={{fontSize:"20px"}}/> Lista de veículos</h2>
                      </div>
+                     <br/>
                      {isLoading &&
                             <div className={styles.loading_spinner}>
                                 <p>Carregando...</p>
@@ -105,7 +106,7 @@ function Vehicles(){
                             </div>
                         }
                         <div className={styles.container_input}>
-                            <input type="text" placeholder="&#x1F50D; &nbsp; Procurar por placa" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_vehicles}/>
+                            <input type="text" placeholder="&#x1F50D; Procurar por placa" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_vehicles}/>
                         </div>
                         { !isLoading &&
                          <table id={styles.table_veiculos}>

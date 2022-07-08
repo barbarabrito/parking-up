@@ -10,6 +10,7 @@ import RegisterVehicle from '../src/components/pages/RegisterVehicle/RegisterVeh
 import Vehicles from '../src/components/pages/Vehicles/Vehicles';
 import EditUser from '../src/components/pages/EditUser/EditUser';
 import EditVehicle from '../src/components/pages/EditVehicle/EditVehicle';
+import Guide from './components/pages/Guide/Guide';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/veiculos' element={<Vehicles/>}/>
           <Route path='/editar-veiculo/:id' element={<EditVehicle/>}/>
           <Route path='/gerenciar' element={<Management/>}/>
+          <Route path='/guia' element={<Guide/>}/>
           <Route path='/sobre' element={<About/>}/>
        </Routes>
        <Footer/>

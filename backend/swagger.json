@@ -19,20 +19,6 @@
 		}
 	],
 	"paths":{
-		"/usuarios":{
-			"get":{
-				"summary":"Lista todos os usuários",
-				"description":"Rota para listagem de todos os usuários cadastrados",
-				"tags":["Usuario"]
-			}
-		},
-		"/usuarios/{id}  ":{
-			"get":{
-				"summary":"Lista um usuário pelo id",
-				"description":"Rota para listagem de um usuário pelo id",
-				"tags":["Usuario"]
-			}
-		},
 		"/usuarios/register":{
 			"post":{
 				"summary":"Cadastro de usuários",
@@ -46,37 +32,81 @@
 							}
 						}
 					}
-				}
-			}
-		},
-		"usuarios/{id}/veiculos":{
-			"post":{
-				"summary":"Cadastra um veículo de um usuário",
-				"description":"Rota para cadastro de veículos de um determinado usuário",
-				"tags":["Usuario"],
-				"requestBody":{
-					"content":{
-						"application/json":{
-							"schema":{
-								"$ref":"#/components/schemas/Veiculo"
+				},
+				"responses":{
+					"201":{
+						"description":"Created",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Usuario"
+								}
 							}
 						}
 					}
 				}
 			}
 		},
-		"/usuarios/{id}/veiculos":{
+		"/usuarios":{
 			"get":{
-				"summary":"Listagem dos veículos de um usuário",
-				"description":"Rota que lista todos os veículos de um usuário específico",
-				"tags":["Usuario"]
+				"summary":"Lista todos os usuários",
+				"description":"Rota para listagem de todos os usuários cadastrados",
+				"tags":["Usuario"],
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Usuario"
+								}
+							}
+						}
+					}
+				}
 			}
 		},
-		"/usuarios/{id} ":{
+		"/usuarios/{id}":{
+			"get":{
+				"summary":"Lista um usuário pelo id",
+				"description":"Rota para listagem de um usuário pelo id",
+				"tags":["Usuario"],
+				"parameters":[
+					{
+						"name":"id",
+						"in":"path",
+						"description":"id do usuário",
+						"required":true
+					}
+				],
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Usuario"
+								}
+							}
+						}
+					}
+				}
+			},
 			"put":{
 				"summary":"Atualiza um usuário",
 				"description":"Rota para atualização do usuario",
 				"tags":["Usuario"],
+				"parameters":[
+					{
+						"name":"id",
+						"in":"path",
+						"description":"Atualiza o usuário pelo id",
+						"required":true
+					}
+				],
 				"requestBody":{
 					"content":{
 						"application/json":{
@@ -85,42 +115,61 @@
 							}
 						}
 					}
+				},
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Usuario"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete":{
+				"summary":"Remove um usuário",
+				"description":"Deleta um usuário pelo id",
+				"tags":["Usuario"],
+				"parameters":[
+					{
+						"name":"id",
+						"in":"path",
+						"description":"Id do usuário",
+						"required":true
+					}
+				],
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Usuario"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
-		"/usuarios/{id}":{
-			"delete":{
-				"summary":"Remove um usuário",
-				"description":"Rota para deletar usuários",
-				"tags":["Usuario"]
-			}
-		},
-		"/veiculos":{
-			"get":{
-				"summary":"Lista todos os veículos",
-				"description":"Rota para a listagem de todos os veículos existentes",
-				"tags":["Veiculo"]
-			}
-		},
-		"/veiculos/{id}":{
-			"get":{
-				"summary":"Lista um veículo por id",
-				"description":"Rota para listar um veículo por id",
-				"tags":["Veiculo"]
-			}
-		},
-		"/veiculos/{id}/usuario":{
-			"get":{
-				"summary":"Retorna o dono de um veículo",
-				"description":"Rota que retorna o dono de um determinado veículo",
-				"tags":["Veiculo"]
-			}
-		},
-		"/veiculos/{id} ":{
-			"put":{
-				"summary":"Atualiza um veículo",
-				"description":"Rota para atualizar um veículo",
-				"tags":["Veiculo"],
+		"/usuarios/{id}/veiculos":{
+			"post":{
+				"summary":"Cadastra um veículo de um usuário",
+				"description":"Rota para cadastro de veículos de um determinado usuário",
+				"tags":["Usuario"],
+				"parameters":[
+					{
+						"name":"id",
+						"in":"path",
+						"description":"Id do usuário",
+						"required":true
+					}
+				],
 				"requestBody":{
 					"content":{
 						"application/json":{
@@ -129,14 +178,183 @@
 							}
 						}
 					}
+				},
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Usuario"
+								}
+							}
+						}
+					}
+				}
+			},
+			"get":{
+				"summary":"Retorna um veículo do usuário",
+				"description":"Retorna um veículo do usuário pelo id",
+				"tags":["Usuario"],
+				"parameters":[
+					{
+						"name":"id",
+						"in":"path",
+						"description":"id do usuário",
+						"required":true
+					}
+				],
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Usuario"
+								}
+							}
+						}
+					}
 				}
 			}
 		},
-		"/veiculos/{id}  ":{
+		"/veiculos":{
+			"get":{
+				"summary":"Lista todos os veículos",
+				"description":"Rota para a listagem de todos os veículos existentes",
+				"tags":["Veiculo"],
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Veiculo"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/veiculos/{id}":{
+			"get":{
+				"summary":"Lista um veículo por id",
+				"description":"Rota que que retorna um veículo pelo id",
+				"tags":["Veiculo"],
+				"parameters":[
+					{
+						"name":"id",
+						"in":"path",
+						"description":"id do veículo",
+						"required":true
+					}
+				],
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Veiculo"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put":{
+				"summary":"Atualiza um veículo",
+				"description":"Rota para atualizar um veículo",
+				"tags":["Veiculo"],
+				"parameters":[
+					{
+						"name":"id",
+						"in":"path",
+						"description":"Atualiza o veículo pelo id",
+						"required":true
+					}
+				],
+				"requestBody":{
+					"content":{
+						"application/json":{
+							"schema":{
+								"$ref":"#/components/schemas/Veiculo"
+							}
+						}
+					}
+				},
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Veiculo"
+								}
+							}
+						}
+					}
+				}
+			},
 			"delete":{
 				"summary":"Remove um veículo",
 				"description":"Rota para deletar um veículo pelo id",
-				"tags":["Veiculo"]
+				"tags":["Veiculo"],
+				"parameters":[
+					{
+						"name":"id",
+						"in":"path",
+						"description":"Id do veículo",
+						"required":true
+					}
+				],
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Veiculo"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/veiculos/{id}/usuario":{
+			"get":{
+				"summary":"Retorna o dono de um veículo",
+				"description":"Rota que retorna o dono de um determinado veículo",
+				"tags":["Veiculo"],
+				"parameters":[
+					{
+						"name":"id",
+						"in":"path",
+						"description":"id do veículo",
+						"required":true
+					}
+				],
+				"responses":{
+					"200":{
+						"description":"OK",
+						"content":{
+							"application/json":{
+								"schema":{
+									"type":"object",
+									"$ref":"#/components/schemas/Veiculo"
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	},

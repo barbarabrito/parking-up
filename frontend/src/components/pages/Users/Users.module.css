@@ -59,5 +59,6 @@
 #search_bar_users::placeholder{
   color: gray;
   font-weight: bold;
+  font-size: 13px;
 }
 

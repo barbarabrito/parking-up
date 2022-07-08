@@ -74,7 +74,7 @@ module.exports = class VeiculoController {
 
     try {
       usuario.veiculos.pull({ _id: id });
-      console.log('removido');
+      await usuario.save();
     }catch(error) {
       res.status(400).json({message: error});
     }

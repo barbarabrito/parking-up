@@ -1,0 +1,21 @@
+.guide_title_container{
+	margin-left: 30px;
+	padding: 10px;
+  	overflow-x:auto;
+}
+
+.guide_title_container h2{
+	color: #34414c;
+}
+
+.container_guide{
+	margin: 0 auto;
+	min-height: 79vh;
+	padding: 30px;
+}
+
+.container_guide p{
+	display: flex;
+	align-items: center;
+	margin: 2em 0;
+}

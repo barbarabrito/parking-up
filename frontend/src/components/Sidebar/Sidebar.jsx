@@ -16,7 +16,7 @@ function Sidebar(){
                 <li><Link to='/usuarios'><AiOutlineUser style={{fontSize:"14px"}}/> Listar usuários</Link></li>
                 <li><Link to='/veiculos'><AiOutlineCar style={{fontSize:"13px"}}/> Listar veículos</Link></li>
                 <li><Link to='/cadastrar-usuario'><BiUserPlus style={{fontSize:"17px"}}/> Cadastrar usuário</Link></li>
-                <li><a href="#"><FiInfo style={{fontSize:"13px"}}/>&nbsp; Guia geral</a></li>
+                <li><Link to='/guia'><FiInfo style={{fontSize:"13px"}}/>&nbsp; Guia geral</Link></li>
             </ul> 
         </div>
     )

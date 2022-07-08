@@ -98,5 +98,6 @@
 #search_bar_vehicles::placeholder{
   color: gray;
   font-weight: bold;
+  font-size: 13px;
 }
 

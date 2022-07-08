@@ -100,11 +100,11 @@ function Management() {
         navigate(`/cadastrar-veiculo/${id}`);
     }
 
-    function navigateToEditVehiclePage(id){
+    function navigateToEditVehiclePage(id) {
         navigate(`/editar-veiculo/${id}`)
     }
 
-    async function deleteVehicle(id){
+    async function deleteVehicle(id) {
         if (window.confirm("Tem certeza que deseja deletar este veículo?")) {
             const data = await api.delete(`/veiculos/${id}`)
                 .then(response => {
@@ -134,7 +134,7 @@ function Management() {
                         >
                             <button onClick={closeModal} id={styles.btn_close_modal}><RiCloseFill /></button>
                             <br />
-                            <h2 ref={(_subtitle) => (subtitle = _subtitle)}><AiFillCar style={{ fontSize: "19px" }} /> Veículos</h2>                  
+                            <h2 ref={(_subtitle) => (subtitle = _subtitle)}><AiFillCar style={{ fontSize: "19px" }} /> Veículos</h2>
                             <br />
                             {veiculos.length == 0 ? <div className={styles.no_vehicle}><p><strong>Este usuário não possui veículos cadastrados</strong></p></div> : (
                                 veiculos.map(veiculo => (
@@ -145,11 +145,11 @@ function Management() {
                                         <p>Ano: {veiculo.ano}</p>
                                         <p>Placa: {veiculo.placaVeiculo}</p>
                                         <button title="Editar veículo" onClick={(e) => { navigateToEditVehiclePage(veiculo._id) }} id={styles.btn_edit_vehicle}>
-                                            <MdEdit/>
+                                            <MdEdit />
                                         </button>
                                         &nbsp;
                                         <button title="Deletar veículo" onClick={(e) => { deleteVehicle(veiculo._id) }} className={styles.btn_delete}>
-                                            <MdDelete/>
+                                            <MdDelete />
                                         </button>
                                     </div>
                                 ))
@@ -168,7 +168,7 @@ function Management() {
                         </div>
                     }
                     <div className={styles.container_input}>
-                        <input type="text" placeholder="&#x1F50D; Procurar por nome" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_users}/>
+                        <input type="text" placeholder="&#x1F50D; Procurar por nome" onChange={(event) => { setSearch(event.target.value) }} id={styles.search_bar_users} />
                     </div>
                     {!loading &&
                         <table className={styles.table}>
@@ -181,39 +181,39 @@ function Management() {
                                 </tr>
                             </thead>
                             <tbody>
-                            {users.filter((user) => {
-                                        if(search == ""){
-                                            return user
-                                        }else if (user.nome.toLowerCase().includes(search.toLocaleLowerCase())) {
-                                            return user
-                                        }
+                                {users.filter((user) => {
+                                    if (search == "") {
+                                        return user
+                                    } else if (user.nome.toLowerCase().includes(search.toLocaleLowerCase())) {
+                                        return user
+                                    }
                                 })
                                 .map((user) => {
-                                    return(
-                                    <tr key={user._id}>
-                                        <td>{user.nome}</td>
-                                        <td>{user.cpf}</td>
-                                        <td>
-                                            <button title="Mostrar veículos" onClick={(e) => { openModal(user._id) }} id={styles.btn_show_vehicle}>
-                                                &nbsp;<IoIosEye style={{ fontSize: "26px" }} />
-                                            </button>
-                                            &nbsp;
-                                            <button title="Adicionar veículo" onClick={(e) => { navigateToRegisterVehiclePage(user._id) }} id={styles.btn_add_vehicle}>
-                                                &nbsp;<CgPlayListAdd style={{ fontSize: "25px" }} />
-                                            </button>
-                                        </td>
-                                        <td>
-                                            <button title="Deletar usuário" onClick={(e) => { handleDeleteUser(user._id) }} className={styles.btn_delete}>
-                                                <MdDelete />
-                                            </button>
-                                            &nbsp;
-                                            <button title="Editar usuário" onClick={(e) => { navigateToEditPage(user._id) }} id={styles.btn_edit_user}>
-                                                <FaUserEdit style={{ color: "green", fontSize: "25px" }} />
-                                            </button>
-                                        </td>
-                                     </tr>
-                                    );
-                                })}
+                                    return (
+                                        <tr key={user._id}>
+                                            <td>{user.nome}</td>
+                                            <td>{user.cpf}</td>
+                                            <td>
+                                                <button title="Mostrar veículos" onClick={(e) => { openModal(user._id) }} id={styles.btn_show_vehicle}>
+                                                    &nbsp;<IoIosEye style={{ fontSize: "26px" }} />
+                                                </button>
+                                                &nbsp;
+                                                <button title="Adicionar veículo" onClick={(e) => { navigateToRegisterVehiclePage(user._id) }} id={styles.btn_add_vehicle}>
+                                                    &nbsp;<CgPlayListAdd style={{ fontSize: "25px" }} />
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button title="Deletar usuário" onClick={(e) => { handleDeleteUser(user._id) }} className={styles.btn_delete}>
+                                                    <MdDelete />
+                                                </button>
+                                                &nbsp;
+                                                <button title="Editar usuário" onClick={(e) => { navigateToEditPage(user._id) }} id={styles.btn_edit_user}>
+                                                    <FaUserEdit style={{ color: "green", fontSize: "25px" }} />
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        );
+                                    })}
                             </tbody>
                         </table>
                     }
