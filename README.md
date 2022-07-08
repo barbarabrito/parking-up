@@ -50,7 +50,7 @@ Tecnologias utilizadas neste projeto:
 #### Barra de pesquisa
 ![preview searchbar](preview/search.gif)
 
-#### Sidebar verão mobile
+#### Sidebar versão mobile
 ![preview sidebar](preview/demo-sidebar-mobile.gif)
 
 ### Instruções para rodar o app localmente
