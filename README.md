@@ -2,7 +2,7 @@
 
 Este aplicativo se trata de um sistema de gestão para estacionamentos e foi desenvolvido para o primeiro desafio do StationOne.
 
-Para informações sobre a [API](http://localhost:5000/docs), consulte a documentação.
+Para informações sobre a API, consulte a [documentação](https://parkingup.herokuapp.com/docs).
 
 Tecnologias utilizadas neste projeto:
 
@@ -50,7 +50,11 @@ Tecnologias utilizadas neste projeto:
 #### Barra de pesquisa
 ![preview searchbar](preview/search.gif)
 
+#### Sidebar verão mobile
+![preview sidebar](preview/demo-sidebar-mobile.gif)
+
 ### Instruções para rodar o app localmente
+
 #### Front-end
 
 1. Navegue até o diretório frontend
