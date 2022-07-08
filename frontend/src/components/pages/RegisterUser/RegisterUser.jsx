@@ -6,8 +6,9 @@ import api from '../../../services/api';
 import { useNavigate } from 'react-router-dom';
 import useFlashMessage from '../../../hooks/useFlashMessage';
 import Message from '../../Message/Message';
+import NewSidebar from '../../NewSideBar/NewSideBar';
 
-function RegisterUser() {
+function RegisterUser({newsidebar}) {
     
     const [nome, setNome] = useState([]);
     const [email, setEmail] = useState([]);
@@ -45,6 +46,7 @@ function RegisterUser() {
     return (
         <div className="wrapper-container">
             <Sidebar />
+            {newsidebar && <NewSidebar active={setNewSidebar} />}
             <main className="main">
                 <div className={styles.cadastro_usuarios_title_container}>
                     <br />

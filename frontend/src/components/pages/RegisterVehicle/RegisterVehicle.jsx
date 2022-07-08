@@ -4,8 +4,9 @@ import { FaCarSide } from 'react-icons/fa';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import api from '../../../services/api';
+import NewSidebar from '../../NewSideBar/NewSideBar';
 
-function RegisterVehicle() {
+function RegisterVehicle({newsidebar}) {
 
     const [marca, setMarca] = useState('');
     const [modelo, setModelo] = useState('');
@@ -36,6 +37,7 @@ function RegisterVehicle() {
     return (
         <div className="wrapper-container">
             <Sidebar />
+            {newsidebar && <NewSidebar active={setNewSidebar} />}
             <main className="main">
                 <div className={styles.cadastro_veiculos_title_container}>
                     <br />

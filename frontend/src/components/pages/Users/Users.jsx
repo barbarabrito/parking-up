@@ -5,8 +5,9 @@ import { useState, useEffect } from 'react';
 import {HiUsers} from 'react-icons/hi';
 import { format } from 'date-fns';
 import LoadingSpinner from '../../../assets/img/1488.gif';
+import NewSidebar from '../../NewSideBar/NewSideBar';
 
-function Users(){
+function Users({newsidebar}){
 
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -28,11 +29,15 @@ function Users(){
         <>
             <div className="wrapper-container">
                 <Sidebar/>
+                {newsidebar && <NewSidebar active={setNewSidebar} />}
                 <main className="main">
                     <br/>
                     <div className={styles.lista_usuarios}>
                         <h2>&nbsp;<HiUsers style={{fontSize:"20px"}}/> Lista de usuários</h2>
                         <br/>
+                       <div className={styles.container_input}>
+                            <input type="text" placeholder="&#x1F50D; Procurar por nome" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_users}/>
+                        </div>
                         { loading &&
                             <div className={styles.loading_spinner}>
                                 <p>Carregando...</p>
@@ -40,9 +45,6 @@ function Users(){
                                 <img src={LoadingSpinner} alt="loading spinner"/>
                             </div>
                         }
-                       <div className={styles.container_input}>
-                            <input type="text" placeholder="&#x1F50D; Procurar por nome" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_users}/>
-                        </div>
                         { !loading &&
                             <table id={styles.table_usuarios}>
                                 <thead>

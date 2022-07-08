@@ -8,6 +8,7 @@ import Modal from 'react-modal';
 import {IoIosEye} from 'react-icons/io';
 import LoadingSpinner from '../../../assets/img/1488.gif';
 import {RiCloseFill} from 'react-icons/ri';
+import NewSidebar from '../../NewSideBar/NewSideBar';
 
 //Estilização do Modal
 const customStyles = {
@@ -18,13 +19,13 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        width: '550px'
+        maxWidth: '550px'
     },
 };
 
 Modal.setAppElement('#root');
 
-function Vehicles(){
+function Vehicles({newsidebar}){
 
     const [users, setUsers] = useState([]);
     const [veiculos, setVeiculos] = useState([]);
@@ -74,8 +75,9 @@ function Vehicles(){
     return(
         <div className="wrapper-container">
             <Sidebar/>
+            {newsidebar && <NewSidebar active={setNewSidebar} />}
             <main className="main">
-                <div className={styles.lista_veiculos_title_container}>
+                <div className={styles.lista_veiculos}>
                     <Modal
                             isOpen={modalIsOpen}
                             onAfterOpen={afterOpenModal}
@@ -85,7 +87,7 @@ function Vehicles(){
                         >
                             <button onClick={closeModal} id={styles.btn_close_modal}><RiCloseFill /></button>
                             <br />
-                            <h2 ref={(_subtitle) => (subtitle = _subtitle)}><FaUser style={{fontSize:"18px"}}/> Usuário</h2>                  
+                            <h2 ref={(_subtitle) => (subtitle = _subtitle)}><FaUser style={{fontSize:"18px"}}/> Dono</h2>                  
                             <br />           
                             <div key={users._id} className={styles.container_show_vehicles}>
                                 <p>Nome: {users.nome}</p>
@@ -93,11 +95,14 @@ function Vehicles(){
                                 <p>Email: {users.email}</p>
                             </div>
                         </Modal>
-                     <div className={styles.lista_usuarios}>
+                     <div className={styles.lista_veiculos_title_container}>
                         <br/>
                         <h2>&nbsp;<FaCarSide style={{fontSize:"20px"}}/> Lista de veículos</h2>
                      </div>
                      <br/>
+                    <div className={styles.container_input}>
+                        <input type="text" placeholder="&#x1F50D; Procurar por placa" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_vehicles}/>
+                    </div>
                      {isLoading &&
                             <div className={styles.loading_spinner}>
                                 <p>Carregando...</p>
@@ -105,9 +110,6 @@ function Vehicles(){
                                 <img src={LoadingSpinner} alt="loading spinner"/>
                             </div>
                         }
-                        <div className={styles.container_input}>
-                            <input type="text" placeholder="&#x1F50D; Procurar por placa" onChange={(event) => {setSearch(event.target.value)}} id={styles.search_bar_vehicles}/>
-                        </div>
                         { !isLoading &&
                          <table id={styles.table_veiculos}>
                                 <thead>

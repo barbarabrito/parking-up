@@ -2,7 +2,7 @@
 	"openapi":"3.0.0",
 	"info":{
 		"title":"Parking Up API",
-		"description":"Essa API foi desenvolvida para o primeiro desafio do StationOne e tem como propósito oferecer ferramentas de gestão para um sistema de estacionamento de veículos.",
+		"description":"Esta API foi desenvolvida para o primeiro desafio do StationOne e tem como propósito oferecer ferramentas de gestão para um sistema de estacionamento de veículos.",
 		"contact":{
 			"email":"barbaramabrito@gmail.com"
 		},
@@ -103,7 +103,7 @@
 					{
 						"name":"id",
 						"in":"path",
-						"description":"Atualiza o usuário pelo id",
+						"description":"Id do usuário",
 						"required":true
 					}
 				],
@@ -275,7 +275,7 @@
 					{
 						"name":"id",
 						"in":"path",
-						"description":"Atualiza o veículo pelo id",
+						"description":"Id do veículo",
 						"required":true
 					}
 				],

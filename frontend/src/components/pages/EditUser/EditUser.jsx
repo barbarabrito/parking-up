@@ -4,8 +4,9 @@ import Sidebar from '../../Sidebar/Sidebar';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import api from '../../../services/api';
+import NewSidebar from '../../NewSideBar/NewSideBar';
 
-function EditUser() {
+function EditUser({newsidebar}) {
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
@@ -50,6 +51,7 @@ function EditUser() {
     return (
         <div className="wrapper-container">
             <Sidebar />
+            {newsidebar && <NewSidebar active={setNewSidebar} />}
             <main className="main">
                 <div className={styles.editar_usuarios_title_container}>
                     <br />

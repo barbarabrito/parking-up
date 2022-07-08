@@ -12,6 +12,7 @@ import { RiCloseFill } from 'react-icons/ri'
 import { AiFillCar } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import { CgPlayListAdd } from 'react-icons/cg';
+import NewSidebar from '../../NewSideBar/NewSideBar';
 
 //Estilização do Modal
 const customStyles = {
@@ -22,13 +23,13 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        width: '550px'
+        maxWidth: '550px'
     },
 };
 
 Modal.setAppElement('#root');
 
-function Management() {
+function Management({newsidebar}) {
 
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -80,7 +81,7 @@ function Management() {
 
     async function handleDeleteUser(id) {
         if (window.confirm("Tem certeza que deseja deletar este usuário?")) {
-            const data = await api.delete(`/usuarios/${id}`)
+            await api.delete(`/usuarios/${id}`)
                 .then(response => {
                     const updatedUser = users.filter((user) => user._id != id)
                     setUsers(updatedUser)
@@ -121,6 +122,7 @@ function Management() {
     return (
         <div className="wrapper-container">
             <Sidebar />
+            {newsidebar && <NewSidebar active={setNewSidebar} />}
             <main className="main">
                 <div className={styles.gerenciar_cadastros_container}>
                     <div>
@@ -156,10 +158,12 @@ function Management() {
                             )}
                         </Modal>
                     </div>
-
                     <br />
                     <h2>&nbsp;<FaTools style={{ fontSize: "20px" }} /> Gerenciar</h2>
                     <br />
+                    <div className={styles.container_input}>
+                        <input type="text" placeholder="&#x1F50D; Procurar por nome" onChange={(event) => { setSearch(event.target.value) }} id={styles.search_bar_users} />
+                    </div>
                     {loading &&
                         <div className={styles.loading_spinner}>
                             <p>Carregando...</p>
@@ -167,9 +171,6 @@ function Management() {
                             <img src={LoadingSpinner} alt="loading spinner" />
                         </div>
                     }
-                    <div className={styles.container_input}>
-                        <input type="text" placeholder="&#x1F50D; Procurar por nome" onChange={(event) => { setSearch(event.target.value) }} id={styles.search_bar_users} />
-                    </div>
                     {!loading &&
                         <table className={styles.table}>
                             <thead>

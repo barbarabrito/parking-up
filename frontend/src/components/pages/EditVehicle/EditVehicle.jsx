@@ -4,8 +4,9 @@ import Sidebar from '../../Sidebar/Sidebar';
 import styles from './EditVehicle.module.css';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { MdEdit } from 'react-icons/md';
+import NewSidebar from '../../NewSideBar/NewSideBar';
 
-function EditVehicle() {
+function EditVehicle({newsidebar}) {
 
   const [marca, setMarca] = useState('');
   const [modelo, setModelo] = useState('');
@@ -51,6 +52,7 @@ function EditVehicle() {
   return(
     <div className="wrapper-container">
         <Sidebar />
+        {newsidebar && <NewSidebar active={setNewSidebar} />}
           <main className="main">
             <div className={styles.editar_veiculos_title_container}>
                 <br />

@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
 app.get('/', (req, res) => {
-    res.status(200).json({msg: 'API estacionamento'});
+    res.status(200).json({msg: 'Rota inicial parking up API'});
 })
 
 const UsuarioRoutes = require('./routes/UsuarioRoutes');

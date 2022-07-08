@@ -1,13 +1,15 @@
 import styles from './Home.module.css';
 import Sidebar from '../../Sidebar/Sidebar';
 import {MdManageAccounts} from 'react-icons/md';
+import NewSidebar from '../../NewSideBar/NewSideBar';
 
-function Home(){
+function Home({newsidebar}){
 
     return(
         <>
             <div className="wrapper-container">
                 <Sidebar/>
+                {newsidebar && <NewSidebar active={setNewSidebar} />}
                 <main className="main">
                 <div className={styles.container_welcome}>
                     <div id={styles.hello_admin}>

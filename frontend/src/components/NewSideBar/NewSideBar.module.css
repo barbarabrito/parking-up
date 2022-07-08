@@ -1,0 +1,23 @@
+.container_n{
+    height: 100%;
+    background-color: #1c2236; 
+    box-shadow: 0 0 20px 1px;
+    padding: 10px;
+}
+
+.container_n ul{
+    margin-top:40px ;
+}
+
+.container_n li{
+	margin: 8px 0;
+	padding: 0.5em;
+	list-style: none;
+}
+
+.container_n a{
+	text-decoration: none;
+	list-style: none;
+	color: #fff;
+    margin-top: 2em;
+}

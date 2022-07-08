@@ -1,15 +1,12 @@
 .container_sobre{
 	margin: 50px auto;
-	min-height: 79vh;
+	min-height: calc(100vh - 220px);
 	padding: 10px;
-	/*border: 1px solid green;*/
 }
 
 .info{
 	max-width: 700px;
 	margin: 0 auto;
-	/*border: 1px solid green;*/
-
 }
 
 .container_sobre h2{

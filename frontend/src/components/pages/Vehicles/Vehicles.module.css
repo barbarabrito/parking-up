@@ -1,8 +1,7 @@
-
-.lista_veiculos_title_container{
+.lista_veiculos{
 	margin-left: 30px;
 	padding: 10px;
-  	overflow-x:auto;
+  overflow-x:auto;
 }
 
 .lista_veiculos_title_container h2{
@@ -67,8 +66,11 @@
 	padding: 2em;
 	background-color: #f2f2f2;
 	border-radius: 5px;
-	margin: 0 auto 10px auto;
-	width: 60%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 10px auto;
+  width: 300px;
+  border: 1px solid #c2c9ce;
 }
   
 .container_show_vehicles p{
@@ -101,3 +103,12 @@
   font-size: 13px;
 }
 
+@media (max-width:800px) {
+  .container_input{
+    text-align: left;
+    margin: 1em 0;
+  }
+  .lista_veiculos{
+    margin-left: 0;
+  }
+}

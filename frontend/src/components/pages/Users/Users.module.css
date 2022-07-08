@@ -62,3 +62,12 @@
   font-size: 13px;
 }
 
+@media (max-width: 800px){
+  .container_input{
+    text-align: left;
+    margin: 1em 0;
+  }  
+  .lista_usuarios{
+    margin-left: 0;
+  }
+}
