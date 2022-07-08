@@ -9,7 +9,7 @@ const swaggerDocument = require('./swagger.json');
 
 app.use(express.json());
 
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'https://parkingup.herokuapp.com' }));
 
 app.get('/', (req, res) => {
     res.status(200).json({msg: 'Rota inicial parking up API'});

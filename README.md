@@ -2,6 +2,8 @@
 
 Este aplicativo se trata de um sistema de gestão para estacionamentos e foi desenvolvido para o primeiro desafio do StationOne.
 
+Você pode acessar em [https://parkingup.vercel.app](https://parkingup.vercel.app)
+
 Para informações sobre a API, consulte a [documentação](https://parkingup.herokuapp.com/docs).
 
 Tecnologias utilizadas neste projeto:
@@ -35,7 +37,7 @@ Tecnologias utilizadas neste projeto:
 
 ## Demonstração
 
-#### Validação dos campos e flash messages
+#### Validação dos campos e mensagens de aviso
 ![preview validation](preview/demo.gif)
 
 #### Página de gerenciamento
@@ -67,18 +69,4 @@ npm install
 ```bash
 npm run dev
 ```
-
-#### Back-end*
-
-1. Navegue até o diretório backend
-
-2. Instale as dependências do projeto:
-```bash
-npm install
-```
-3. Execute aplicação:
-```bash
-npm start
-```
-<sup>*Esse app possui as seguintes variáveis de ambiente: process.env.DB_USER e process.env.DB_PASS</sup>
 
