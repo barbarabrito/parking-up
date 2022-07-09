@@ -14,7 +14,7 @@
 			"description":"API de desenvolvimento/teste"
 		},
 		{
-			"url":"https://parkingupapi.onrender.com",
+			"url":"https://parkingup.herokuapp.com",
 			"description":"API de produção"
 		}
 	],
